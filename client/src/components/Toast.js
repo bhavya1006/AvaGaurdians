@@ -1,17 +1,14 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { clearToastMessage, setToastMessage } from '../store/slices/toastSlice';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useToast } from '../store';
 
 const Toast = () => {
-  const dispatch = useDispatch();
-  const toastMessage = useSelector(state => state.Toast.message);
-  const toastType = useSelector(state => state.Toast.type);
+ const {message,type,setToast,clearToast}= useToast();
 
   useEffect(() => {
-    if (toastMessage) {
-      toast[toastType ? 'success' : 'error'](toastMessage, {
+    if (message) {
+      toast[type ? 'success' : 'error'](message, {
         position: "top-center",
         autoClose: 2000,
         hideProgressBar: true,
@@ -21,9 +18,9 @@ const Toast = () => {
         progress: undefined,
         theme: "dark",
       });
-      dispatch(clearToastMessage());
+      clearToast();
     }
-  }, [toastMessage,toastType]);
+  }, [message,type]);
 
   return <ToastContainer />;
 }

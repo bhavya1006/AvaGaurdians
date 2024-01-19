@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Authorization() {
+function Authentication() {
   return (
     <div>
       
@@ -8,4 +8,4 @@ function Authorization() {
   )
 }
 
-export default Authorization
+export default Authentication

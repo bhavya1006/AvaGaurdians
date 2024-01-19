@@ -1,4 +1,6 @@
 const Singup = async (req,res)=>{
+    const {contact,password,confirmpassword}=req.body
+    
     res.send("Singup")
 }
 
