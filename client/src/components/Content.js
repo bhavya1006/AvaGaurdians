@@ -14,7 +14,7 @@ function Content() {
         precipitation,
         coordinates, setStatistics }= useStatistics()
     const{probability,setProbability}=useProbability()
-
+    // const [precautions,setPrecautions]
     const {setToast}=useToast()
 
     const handleGetreport = async () => {

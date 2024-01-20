@@ -82,7 +82,7 @@ const handleLocation = async () => {
                             <li className={`nav-item ${page==="contact"?"front":""}`} onClick={()=>{changePage("contact")}}>
                                 Contact Us
                             </li>
-                            {!contact ?
+                            {contact ?
                                 <li id="getLocationButton" className="nav-item" onClick={handleLocation}>
                                     Location
                                 </li> : <li className="nav-item" onClick={toggleAuthentication}>
