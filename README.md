@@ -14,15 +14,15 @@ Team Avagaurdian has developed an Avalanche Detection and Mitigation System that
 - Humidity
 - Temperature
 - Wind Speed
+- Elevation
 
 **Technologies Used:**
 - Python
-- Sensors for environmental data
+- API for real time data retrieval
 - Machine Learning algorithms for prediction
-- [List any other technologies used]
 
 **Getting Started:**
-1. Clone the repository: `git clone https://github.com/your-username/avalanche-detection.git`
+1. Clone the repository: `git clone https://github.com/ayushmanlakshkr/AvaGuardians`
 2. Install dependencies: `pip install -r requirements.txt`
 3. Run the system: `python main.py`
 
@@ -30,7 +30,5 @@ Team Avagaurdian has developed an Avalanche Detection and Mitigation System that
 Adjust the configuration settings in `config.yml` to customize the system according to your needs.
 
 **Contributing:**
-We welcome contributions! If you would like to contribute, please follow our [contribution guidelines](CONTRIBUTING.md).
+We welcome contributions! If you would like to contribute, please follow our repository and are welcomed to pull requests.
 
-**License:**
-This project is licensed under the [MIT License](LICENSE).
