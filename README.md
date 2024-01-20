@@ -26,8 +26,7 @@ Team Avagaurdian has developed an Avalanche Detection and Mitigation System that
 2. Install dependencies: `pip install -r requirements.txt`
 3. Run the system: `python main.py`
 
-**Configuration:**
-Adjust the configuration settings in `config.yml` to customize the system according to your needs.
+
 
 **Contributing:**
 We welcome contributions! If you would like to contribute, please follow our repository and are welcomed to pull requests.
