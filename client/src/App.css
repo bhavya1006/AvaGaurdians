@@ -1,6 +1,10 @@
 .App {
   height: 100%;
   width: 100%;
+  background-image: url('http://localhost:3000/images/avalanche-bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+
 }
 
 .logo {
@@ -258,7 +262,7 @@ box-sizing: border-box;
 }
 
 #alert-box {
-  background-color: white;
+  background-color: rgb(218, 218, 218);
   border-radius:2rem;
   box-shadow: 2px 2px 6px 6px rgba(112, 110, 110, 0.15);
   padding:30px;
@@ -274,10 +278,11 @@ li {
   border-radius:1.5rem;
   box-shadow: 1px 1px 3px 3px rgba(112, 110, 110, 0.15);
   padding:10px;
+  min-width: 100px;
 }
 
 #caution-box {
-  background-color: white;
+  background-color: rgb(218, 218, 218);
   border-radius: 2rem; 
   box-shadow: 2px 2px 6px 6px rgba(112, 110, 110, 0.15); 
   padding:30px;
@@ -288,6 +293,8 @@ li {
   margin:10px 0px;
 }
 #precaution-box {
+  background-color: rgb(218, 218, 218);
+
   border-radius: 2rem;
    width:100%;
    box-shadow: 2px 2px 6px 6px rgba(65,11,16,.15);
@@ -299,16 +306,13 @@ li {
 
 .nav-item {
   padding-left:50px;
-  color: #b9cdf3;
 
 }
 
 .nav-item:hover{
-  color: white;
   cursor: pointer;
 }
 .front {
-  color: white;
 }
 
 .my-navbar{
@@ -342,8 +346,8 @@ img {
   font-size: x-large;
   font-style: italic;
   margin:0px;
-  color: #b9cdf3;
 }
+
 #map-margin {
   margin: 0px auto;
   height:50vh;
@@ -372,21 +376,32 @@ border-radius: 20px;
 }
 
 .main-page{
-  background-image: url('http://localhost:3000/images/avalanche-bg.jpg');
   
 }
 
 .red-panel{
-  background: linear-gradient(to top, #ffcccc, #ff4747);}
+  background: linear-gradient(to top, #ffcccc, #ff7070)
+}
+
 
 .yellow-panel{
-  background: linear-gradient(to top, #ffffcc, #ffff00);}
+  background: linear-gradient(to top, #ffffcc, #ffff72);}
 
 .green-panel{
-  background: linear-gradient(to top, #ccffcc, #46ee46);}
+  background: linear-gradient(to top, #f0fff1, #d1ffd1);}
 
-  
-  
+ .probability-container{
+height: 100%;
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+  }
+  #percentage{
+    font-weight: bolder;
+    font-size:4em;
+    font-style: italic;
+  }
   .about-container {
     display: flex;
     gap:100px;
@@ -421,12 +436,16 @@ margin-bottom: 20px;
     margin: 5px 0px;
     font-size: medium;
   }
+  
 
   .cities>div:hover{
     background-color: rgb(221, 221, 221);
     cursor: pointer;
   }
 
+  .hidden{
+    display: none;
+  }
   
   .about-container > div {
     width:90%;

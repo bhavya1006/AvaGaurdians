@@ -7,17 +7,16 @@ import Contact from './Contact'
 import About from './About'
 
 function Main() {
-  const {page}=usePage()
+  const { page } = usePage()
   return (
     <>
-    <div className='main-page'>
-    <Navbar/>
-    <hr className='navbar-breaker'></hr>
-    {page==="home"?<Content/>:<></>}
-    {page==="about"?<About/>:<></>}
-    {page==="contact"?<Contact/>:<></>}
-    <Footer/>
-    </div>
+      <div className='main-page'>
+        <Navbar />
+        {page === "home" ? <Content /> : <></>}
+        {page === "about" ? <About /> : <></>}
+        {page === "contact" ? <Contact /> : <></>}
+        <Footer />
+      </div>
     </>
   )
 }

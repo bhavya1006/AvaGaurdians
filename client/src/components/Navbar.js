@@ -72,7 +72,7 @@ const handleLocation = async () => {
                     </button>
 
                     <div className={`${collapse ? 'collapse' : ''} navbar-collapse`} id="navbarSupportedContent">
-                        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                        <ul className="navbar-nav me-auto mb-2 mb-lg-0 nav-itemss">
                             <li className={`nav-item ${page==="home"?"front":""}`} onClick={()=>{changePage("home")}}>
                                 Home
                             </li>
@@ -82,7 +82,7 @@ const handleLocation = async () => {
                             <li className={`nav-item ${page==="contact"?"front":""}`} onClick={()=>{changePage("contact")}}>
                                 Contact Us
                             </li>
-                            {contact ?
+                            {!contact ?
                                 <li id="getLocationButton" className="nav-item" onClick={handleLocation}>
                                     Location
                                 </li> : <li className="nav-item" onClick={toggleAuthentication}>

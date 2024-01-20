@@ -7,6 +7,7 @@ function App() {
   const {authentication}=useAuthentication();
   return (
     <div className="App">
+      <div className="overlay"></div>
       {authentication?<Authentication/>:<Main/>}
     </div>
   );

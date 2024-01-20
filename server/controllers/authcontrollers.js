@@ -1,7 +1,6 @@
 const User = require('../models/userModel');
 const OTP = require('../models/otpModel');
 const nodemailer = require('nodemailer');
-const { v4: uuidv4 } = require('uuid');
 
 const transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -13,9 +12,7 @@ const transporter = nodemailer.createTransport({
 
 const Signup = async (req, res) => {
     const { contact, password, confirmpassword } = req.body;
-
     const otpValue = 1234
-
     // try {
     //     await OTP.create({
     //         contact,

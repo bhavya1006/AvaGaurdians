@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import { BASE_URL_BACKEND } from '../service/Api'
-import { useStatistics } from '../store'
+import { useStatistics,useProbability } from '../store'
 import { useToast } from '../store'
 
 function Content() {
@@ -13,6 +13,7 @@ function Content() {
         humidity,
         precipitation,
         coordinates, setStatistics }= useStatistics()
+    const{probability,setProbability}=useProbability()
 
     const {setToast}=useToast()
 
@@ -25,9 +26,9 @@ function Content() {
     }
 
     const handleCities = async (e) => {
+        setInput(e.target.value)
         await axios.post(`${BASE_URL_BACKEND}home/get_cities`, { input: e.target.value }).then((response) => {
             setCities(response.data.cities)
-            setInput(e.target.value)
         })
         if (e.target.value == "") {
             setCities([])
@@ -38,17 +39,18 @@ function Content() {
         <div className='content-page'>
             <div className="container-fluid padup">
                 <div className="row">
-                    <form className="d-flex" role="search">
-                        <input className="form-control me-2" type="search"
-                            placeholder="Search" aria-label="Search" onChange={handleCities} />
+                    <div className="d-flex" role="search">
+                        <input className="form-control me-2" type="search" value={input}
+                           id='search-input' placeholder="Search" aria-label="Search" onChange={handleCities} />
                         <button className="btn btn-outline-success" onClick={handleGetreport}>Search</button>
-                    </form>
+                    </div>
                 </div>
             </div>
-            <div className='cities'>
-                {cities.map((city) => <div key={city} onClick={() => { setInput(city) }}>{city}</div>)}
+            <div className={`cities ${cities.length>0?<></>:"hidden"}`}>
+                {cities.map((city) => <div key={city} onClick={() => { setInput(city.city) }}>{city.city}</div>)}
             </div>
-            <div id="map-margin" className=" bg-body-tertiary">
+            
+            {/* <div id="map-margin" className=" bg-body-tertiary">
                 <div
                     className="position-relative overflow-hidden p-3 p-md-5 text-center ">
                     <div className="col-md-6 p-lg-5">
@@ -58,45 +60,57 @@ function Content() {
                     <div
                         className="product-device product-device-2 shadow-sm d-none d-md-block"></div>
                 </div>
-            </div>
+            </div> */}
             <div className="container">
                 <div className="container text-center">
                     <div className="row">
-                        <div id="alert-box" className="col green-panel">
-                            <h2>ALERTS</h2><hr />
+                        <div id="alert-box" className="col">
+                            <h2>Details</h2><hr />
                             <div id="container-alert-caution" className="container-fluid">
                                 <div className="container text-center">
                                     <div id="alert-box-prop"
                                         className="row alert-container">
                                         <div className="col box-prop">
-                                            Wind-Direction<hr /> Lorem ipsum dolor sit amet
+                                            Wind-Direction<hr />
+                                             {/* {wind_direction} */}
+    East West
                                         </div>
                                         <div className="col box-prop">
-                                            Wind-Speed<hr /> Lorem, ipsum dolor sit amet
+                                            Wind-Speed<hr /> 
+                                            {/* {wind_speed} */}
+                                            6 Km/h
                                         </div>
                                         <div className="col box-prop">
-                                            Temperature<hr /> Lorem ipsum dolor sit amet
+                                            Temperature<hr /> 
+                                            {/* {temperature} */}
+                                            28 C
                                         </div>
                                         <div className="col box-prop">
-                                            Humidity<hr /> Lorem ipsum dolor sit
+                                            Humidity<hr />
+                                             {/* {humidity} */}
+                                             60.7%
                                         </div>
                                         <div className="col box-prop">
-                                            Siesmic Intensity<hr /> Lorem, ipsum dolor sit
+                                            Precipitation<hr />
+                                            {/* {precipitation} */}
+                                            0%
                                         </div>
                                         <div className="col box-prop">
-                                            VPS<hr /> Lorem ipsum dolor sit
+                                            Co-Ordinates<hr /> Latitude : 26.218287 {coordinates.latitude}<br></br>
+                                            Longitude : 78.182831 {coordinates.longitude}
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div id="caution-box" className="col yellow-panel">
-                            <h2>CAUTION</h2><hr />
-                            <div className="container-fluid">
-                                <div className="container text-center">
+                        <div id="caution-box" className="col green-panel">
+                            <h2>Alerts</h2><hr style={{margin:"0px"}}/>
+                            <div className="container-fluid probability-container">
+                                <div className="container text-center probability-container">
                                     <div className="row ">
-                                        <p>GIVE RED ALERTS HERE</p>
+                                        {/* <p>{probability} %</p> */}
+                                        <p id='percentage'>0 %</p>
                                     </div>
                                 </div>
                             </div>
@@ -106,7 +120,7 @@ function Content() {
             </div>
             <br />
             <div id="precaution-box-outside" className="container-fluid">
-                <div id="precaution-box" className="col text-center red-panel">
+                <div id="precaution-box" className="col text-center green-panel">
                     <h2>Precautions</h2><hr />
                     <ul>
                         <li>Write ur content here</li>
