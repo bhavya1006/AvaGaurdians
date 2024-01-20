@@ -1,6 +1,6 @@
 const authMiddleware = (req, res, next) => {
-    const { username, password, confirmpassword } = req.body;
-    if (!username || !password) {
+    const { contact, password, confirmpassword } = req.body;
+    if (!contact || !password) {
         return res.status(400).send('Please enter all the fields');
     }
     if (confirmpassword && confirmpassword !== password) {

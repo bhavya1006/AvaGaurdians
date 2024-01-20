@@ -1,4 +1,4 @@
-import create from 'zustand';
+import {create} from 'zustand';
 
 export const useProbability = create((set) => ({
     probability: "",
@@ -44,10 +44,23 @@ export const useTutorial = create((set)=>({
 }))
 
 export const useUser = create((set)=>({
-    username:"",
     contact:"",
-    setUser :(user)=>{set({
-        username:user.username,
-        contact:user.contact
+    setUser :(contact)=>{set({
+        contact:contact
     })}
+}))
+
+export const useLogin = create((set)=>({
+    status:true,
+    toggleLogin:()=>{set((state)=>({status:!state.status}))}
+}))
+
+export const useOTP = create((set)=>({
+    otp_status:false,
+    toggleOTP:()=>{set((state)=>({otp_status:!state.otp_status}))}
+}))
+
+export const usePage = create((set)=>({
+    page:"",
+    changePage:(input)=>{set({page:input})}
 }))

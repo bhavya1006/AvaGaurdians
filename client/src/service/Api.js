@@ -1,0 +1,1 @@
+export const BASE_URL_FRONTEND = 'http://localhost:3000/'
