@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react'
-import { useLogin } from '../store'
-import { BASE_URL_FRONTEND } from '../service/Api'
+import { useLogin,useAuthentication } from '../store'
+import { BASE_URL_BACKEND } from '../service/Api'
+
 
 function Login() {
-
+const{toggleAuthentication}=useAuthentication()
     const {status,toggleLogin}= useLogin()
 
   return (
@@ -24,6 +25,10 @@ function Login() {
       <p className="signup-link">
         No account? 
       <span id='singup_togo' onClick={toggleLogin}>  Sing Up</span>
+      </p>
+      <p className="signup-link">
+        Go to home page? 
+      <span id='singup_togo' onClick={toggleAuthentication}>Home</span>
       </p>
       
     </div>

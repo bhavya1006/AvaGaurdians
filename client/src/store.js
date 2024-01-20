@@ -61,6 +61,11 @@ export const useOTP = create((set)=>({
 }))
 
 export const usePage = create((set)=>({
-    page:"",
+    page:"home",
     changePage:(input)=>{set({page:input})}
+}))
+
+export const useAuthentication =create((set)=>({
+    authentication:false,
+    toggleAuthentication:()=>{set((state)=>({authentication:!state.authentication}))}
 }))

@@ -308,7 +308,6 @@ li {
   cursor: pointer;
 }
 .front {
-  padding-left:10px;
   color: white;
 }
 
@@ -386,18 +385,100 @@ border-radius: 20px;
 .green-panel{
   background: linear-gradient(to top, #ccffcc, #46ee46);}
 
-@media screen and (max-width:991px) {
-  #alert-box {
-      width:90%;
+  
+  
+  .about-container {
+    display: flex;
+    gap:100px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding:10px;
+    align-items: center;
   }
-  .padup {
-      width:90%;
+  .project-details {
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+    border-radius:20px;
+    background-color: white;
   }
-  #max-screen {
-      display:none;
+  .team-container {
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    background-color: white;
+
   }
-  #map-margin {
-      width:90%;
+  .cities{
+width: 40%;
+margin: 0px auto;
+background-color: white;
+padding: 10px 20px;
+border-radius: 10px;
+margin-bottom: 20px;
   }
 
+  .cities>div{
+    border-radius: 10px;
+    padding: 0px 10px;
+    margin: 5px 0px;
+    font-size: medium;
+  }
+
+  .cities>div:hover{
+    background-color: rgb(221, 221, 221);
+    cursor: pointer;
+  }
+
+  
+  .about-container > div {
+    width:90%;
+    padding: 20px;
+    text-align: center;
+  }
+  .video-item {
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    width: 50%;
+    height: 40%;
+    margin: 0px auto;
 }
+video {
+    width: 100%;
+    height:100%;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+  
+  
+  @keyframes blinking1Text{
+    0%{     color: #000;    }
+    49%{    color: #000; }
+    60%{    color: transparent; }
+    99%{    color:transparent;  }
+    100%{   color: #000;    }
+  }
+  .blinking-text {
+    animation: blinking1Text 1.5s infinite; /* Adjust the duration as needed */
+  }
+  
+  @media screen and (max-width:991px) {
+    #alert-box {
+        width:90%;
+    }
+    .padup {
+        width:90%;
+    }
+    #max-screen {
+        display:none;
+    }
+    #map-margin {
+        width:90%;
+    }
+    .about-container {
+      flex-wrap: wrap;
+  }
+  
+  .about-container > div {
+      width: 50%;
+  }
+  
+  }

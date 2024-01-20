@@ -32,6 +32,7 @@ userschema.pre('save', async function (next) {
     }
 });
 
+
 userschema.methods.generateToken = async function () {
     try {
         return jwt.sign({
