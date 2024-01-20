@@ -1,7 +1,7 @@
 import {create} from 'zustand';
 
 export const useProbability = create((set) => ({
-    probability: "",
+    probability: 9,
     setProbability: (chance) => set({ probability: chance })
 }))
 
@@ -45,8 +45,8 @@ export const useTutorial = create((set)=>({
 
 export const useUser = create((set)=>({
     contact:"",
-    setUser :(contact)=>{set({
-        contact:contact
+    setUser :(contac)=>{set({
+        contact:contac
     })}
 }))
 

@@ -6,7 +6,7 @@ const userschema = new mongoose.Schema({
     contact: {
         type: Number,
         required: [true, "Please enter a Number"],
-        unique: [true, 'Username already exists'],
+        unique: [true, 'Contact already exists'],
     },
     password: {
         type: String,
@@ -21,7 +21,6 @@ userschema.pre('save', async function (next) {
     if (!user.isModified("password")) {
         return next();
     }
-
     try {
         const saltRound = await bcrypt.genSalt(10);
         const hashPassword = await bcrypt.hash(user.password, saltRound);
@@ -36,7 +35,7 @@ userschema.pre('save', async function (next) {
 userschema.methods.generateToken = async function () {
     try {
         return jwt.sign({
-            username: this.username
+            contact: this.contact
         },
          process.env.JWT_SECRET_KEY, 
          {
