@@ -4,6 +4,7 @@
 
 **Overview:**
 Team Avagaurdian has developed an Avalanche Detection and Mitigation System that considers environmental factors such as humidity, temperature, and wind speed. The system provides early detection of avalanche risks and implements mitigation measures to enhance safety in avalanche-prone areas.
+![Uploading DFD INNERVE.png…]()
 
 **Features:**
 - Real-time monitoring of environmental factors.
