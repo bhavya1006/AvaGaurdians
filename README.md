@@ -29,5 +29,6 @@ Team Avagaurdian has developed an Avalanche Detection and Mitigation System that
 
 
 **Contributing:**
-We welcome contributions! If you would like to contribute, please follow our repository and are welcomed to pull requests.
+- We welcome contributions!
+- If you would like to contribute, please follow our repository and are welcomed to pull requests.
 
